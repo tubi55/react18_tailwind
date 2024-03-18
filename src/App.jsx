@@ -2,15 +2,11 @@ import List from "./components/List";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-4xl font-bold underline">Flickr Gallery</h1>
+    <main className="w-full p-20">
+      <h1 className="text-[4vmax] font-light mb-10 ">Flickr Gallery</h1>
       <List />
-    </div>
+    </main>
   );
 }
 
 export default App;
-
-//tailwindcss 설치 및 config파일 초기화
-//npm install -D tailwindcss postcss autoprefixer
-//npx tailwindcss init

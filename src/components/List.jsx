@@ -10,10 +10,8 @@ const List = () => {
     gcTime: 1000 * 60 * 60,
   });
 
-  console.log("data:", data, "isPending:", isPending);
-
   return (
-    <section>
+    <section className="w-full flex flex-wrap justify-start gap-10">
       {isPending && <p>Loading...</p>}
       {isError && <p>{error?.message}</p>}
       {data?.map((flickrData) => (
