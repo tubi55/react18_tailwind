@@ -1,7 +1,10 @@
+import List from "./components/List";
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-4xl font-bold underline">Hello world!</h1>
+      <h1 className="text-4xl font-bold underline">Flickr Gallery</h1>
+      <List />
     </div>
   );
 }
