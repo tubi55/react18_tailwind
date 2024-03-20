@@ -1,5 +1,6 @@
 import List from "./components/List";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main>
         <List />
       </main>
+      <Modal />
     </>
   );
 }

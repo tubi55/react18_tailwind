@@ -1,7 +1,7 @@
 import { useGlobalData } from "../hooks/useGlobalData";
 
 const Card = ({ data }) => {
-  const { setFlickrType } = useGlobalData();
+  const { setFlickrType, setModal } = useGlobalData();
 
   const handleProfile = (e) => {
     setFlickrType({ type: "user", id: e.target.innerText, isProfile: true });
@@ -10,7 +10,7 @@ const Card = ({ data }) => {
   return (
     <article className="w-[var(--wid)] mb-16 transition duration-300 saturate-50 opacity-80 hover:saturate-150 hover:opacity-100 hover:-translate-y-2">
       {/* thumbnail box */}
-      <figure className="picFrame h-[16vmax] mb-2 tb:h-[30vmin] ">
+      <figure className="picFrame h-[16vmax] mb-2 tb:h-[30vmin]" onClick={()=>setModal(true)}>
         <img
           src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_w.jpg`}
           alt={data.title}

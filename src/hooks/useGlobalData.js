@@ -11,8 +11,10 @@ export function GlobalProvider({ children }) {
     isProfile: false,
   });
 
+  const [Modal, setModal] = useState(false);
+
   return (
-    <GlobalContext.Provider value={{ FlickrType, setFlickrType }}>
+    <GlobalContext.Provider value={{ FlickrType, setFlickrType, Modal,setModal }}>
       {children}
     </GlobalContext.Provider>
   );
