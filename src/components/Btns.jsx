@@ -13,7 +13,7 @@ const Btns = () => {
   };
 
   return (
-    <nav className="flex gap-6">
+    <nav className="flex gap-6 mb:w-full mb:justify-between">
       {["user", "interest"].map((type) => (
         <button
           key={type}

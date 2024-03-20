@@ -11,7 +11,7 @@ const Search = () => {
     setFlickrType({ type: "search", keyword: keyword });
   };
   return (
-    <form className="flex items-center gap-3" onSubmit={handleSearch}>
+    <form className="flex items-center gap-3 mb:w-full" onSubmit={handleSearch}>
       <input type="text" placeholder="Search" />
 
       <button className="-translate-x-8 btnSearch">

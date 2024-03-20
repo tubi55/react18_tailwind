@@ -8,13 +8,20 @@
     w-[400px] h-full bg-white
     px-20 py-16 
     flex flex-wrap content-between 
-    web:relative web:w-full;
+    wide:px-10 wide:w-[350px] wide:pr-0
+    web:relative web:w-full web:px-20 web:py-5
+    tb:px-12 
+    mb:px-8;
   }
   main {
-    @apply ml-[400px] px-20 py-16;
+    @apply ml-[400px] px-20 py-16
+    wide:ml-[350px]
+    web:ml-0 web:pt-0
+    tb:px-12 
+    mb:px-8;;  
   }
   input[type="text"] {
-    @apply w-full px-2 py-1 pr-8 bg-transparent border-b outline-none border-black/50;
+    @apply w-full px-2 py-1 pr-8 bg-transparent border-b outline-none border-black/50 mb:w-full;
   }
 }
 
