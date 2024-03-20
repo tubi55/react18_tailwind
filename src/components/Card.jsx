@@ -2,9 +2,8 @@ const Card = ({ data }) => {
   return (
     <article className="w-[calc((100%-(20px*4))/5)] mb-16 transition duration-300">
       {/* thumbnail box */}
-      <figure className="w-full h-[16vmax] mb-2 cursor-pointer">
+      <figure className="picFrame h-[16vmax] mb-2 ">
         <img
-          className="object-cover w-full h-full"
           src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`}
           alt={data.title}
         />

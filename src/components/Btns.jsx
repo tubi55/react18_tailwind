@@ -7,8 +7,9 @@ const Btns = () => {
   const { FlickrType, setFlickrType } = useGlobalData();
 
   const handleClick = (type) => {
-    if (type === "interest") setFlickrType({ type: "interest" });
-    else setFlickrType({ type: "user", id: myID.current });
+    type === "interest"
+      ? setFlickrType({ type: "interest" })
+      : setFlickrType({ type: "user", id: myID.current });
   };
 
   return (

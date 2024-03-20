@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .picFrame {
+    @apply relative w-full h-[30vh] cursor-pointer [&_img]:w-full [&_img]:h-full [&_img]:object-cover;
+  }
   .btn {
     @apply relative inline-block py-2 text-base transition duration-300 bg-transparent border-none cursor-pointer text-black/50 after:absolute after:bottom-0 after:left-0 after:content-[''] after:block after:w-[0px] after:h-[1px] after:bg-black/40 after:transition-[width] after:duration-300;
   }
