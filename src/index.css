@@ -4,7 +4,11 @@
 
 @layer base {
   header {
-    @apply fixed top-0 left-0 w-[400px] h-full bg-white px-20 py-16 flex flex-wrap content-between;
+    @apply fixed top-0 left-0 
+    w-[400px] h-full bg-white
+    px-20 py-16 
+    flex flex-wrap content-between 
+    web:relative web:w-full;
   }
   main {
     @apply ml-[400px] px-20 py-16;
@@ -16,10 +20,19 @@
 
 @layer components {
   .picFrame {
-    @apply relative w-full h-[30vh] cursor-pointer [&_img]:w-full [&_img]:h-full [&_img]:object-cover;
+    @apply relative w-full h-[30vh] cursor-pointer 
+    [&_img]:w-full [&_img]:h-full [&_img]:object-cover;
   }
   .btn {
-    @apply relative inline-block py-2 text-base transition duration-300 bg-transparent border-none cursor-pointer text-black/50 after:absolute after:bottom-0 after:left-0 after:content-[''] after:block after:w-[0px] after:h-[1px] after:bg-black/40 after:transition-[width] after:duration-300;
+    @apply 
+    relative inline-block py-2 bg-transparent 
+    text-base text-black/50
+    transition duration-300 
+    border-none cursor-pointer  
+    after:absolute after:bottom-0 after:left-0 
+    after:content-[''] after:block 
+    after:w-[0px] after:h-[1px] after:bg-black/40
+    after:transition-[width] after:duration-300;
   }
   .btn.on {
     @apply text-black/100 after:w-full;
@@ -28,6 +41,7 @@
     @apply text-lg bg-transparent border-none cursor-pointer text-black/70;
   }
   .infoText {
-    @apply text-4xl text-black/70 absolute left-[50%] top-[10vh] -translate-x-[50%] leading-normal text-center;
+    @apply absolute left-[50%] top-[10vh]  -translate-x-[50%] 
+    text-4xl text-black/70 leading-normal text-center;
   }
 }
