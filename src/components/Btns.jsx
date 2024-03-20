@@ -9,7 +9,7 @@ const Btns = () => {
   const handleClick = (type) => {
     type === "interest"
       ? setFlickrType({ type: "interest" })
-      : setFlickrType({ type: "user", id: myID.current });
+      : setFlickrType({ type: "user", id: myID.current, isProfile: false });
   };
 
   return (
@@ -18,7 +18,10 @@ const Btns = () => {
         <button
           key={type}
           onClick={() => handleClick(type)}
-          className={clsx("btn", FlickrType.type === type && "on")}
+          className={clsx(
+            "btn",
+            FlickrType.type === type && !FlickrType.isProfile && "on"
+          )}
         >
           {type === "user" ? "My Gallery" : "Interest Gallery"}
         </button>

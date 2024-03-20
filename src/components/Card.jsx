@@ -1,4 +1,12 @@
+import { useGlobalData } from "../hooks/useGlobalData";
+
 const Card = ({ data }) => {
+  const { setFlickrType } = useGlobalData();
+
+  const handleProfile = (e) => {
+    setFlickrType({ type: "user", id: e.target.innerText, isProfile: true });
+  };
+
   return (
     <article className="w-[calc((100%-(20px*4))/5)] mb-16 transition duration-300">
       {/* thumbnail box */}
@@ -27,7 +35,9 @@ const Card = ({ data }) => {
             )
           }
         />
-        <span>{data.owner}</span>
+        <span onClick={handleProfile} className="hover:text-violet-700">
+          {data.owner}
+        </span>
       </div>
     </article>
   );
