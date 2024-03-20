@@ -1,22 +1,22 @@
-import { useState } from "react";
 import clsx from "clsx";
+import { useGlobalData } from "../hooks/useGlobalData";
 
 const Btns = () => {
-  const [Index, setIndex] = useState(0);
+  const { FlickrType, setFlickrType } = useGlobalData();
 
-  const handleClick = (idx) => {
-    setIndex(idx);
+  const handleClick = (type) => {
+    setFlickrType(type);
   };
 
   return (
     <nav className="flex w-full gap-6 mb-10">
-      {["My Gallery", "Interest Gallery"].map((txt, idx) => (
+      {["basic", "interest"].map((type) => (
         <button
-          key={txt}
-          onClick={() => handleClick(idx)}
-          className={clsx("btn", idx === Index && "on")}
+          key={type}
+          onClick={() => handleClick(type)}
+          className={clsx("btn", FlickrType === type && "on")}
         >
-          {txt}
+          {type === "basic" ? "My Gallery" : "Interest Gallery"}
         </button>
       ))}
     </nav>
