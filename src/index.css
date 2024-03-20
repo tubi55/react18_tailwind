@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply relative inline-block py-2 text-base transition duration-300 bg-transparent border-none cursor-pointer text-black/50 after:absolute after:bottom-0 after:left-0 after:content-[''] after:block after:w-[0px] after:h-[1px] after:bg-black/40 after:transition-[width] after:duration-300;
+  }
+  .btn.on {
+    @apply text-black/100 after:w-full;
+  }
+}

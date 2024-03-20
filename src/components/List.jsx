@@ -2,10 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchFlickr } from "../api/api";
 import Card from "./Card";
 
-//npm 설치시 npm i react-masonry-component  --force or --legacy-peer-deps
-//--force는 우회설치
-//--legacy-peer-deps는 오류내용 무시 설치 (이걸로 설치했음)
-
 const List = () => {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["flickr"],
