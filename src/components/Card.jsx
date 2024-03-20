@@ -1,6 +1,6 @@
 import { useGlobalData } from "../hooks/useGlobalData";
 
-const Card = ({ data }) => {
+const Card = ({ data, setImgURL }) => {
   const { setFlickrType, setModal } = useGlobalData();
 
   const handleProfile = (e) => {
@@ -14,6 +14,7 @@ const Card = ({ data }) => {
         <img
           src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_w.jpg`}
           alt={data.title}
+          onClick={()=>setImgURL(`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_b.jpg`)}
         />
       </figure>
 
@@ -27,7 +28,7 @@ const Card = ({ data }) => {
         <img
           className="w-10"
           src={`http://farm${data.farm}.staticflickr.com/${data.server}/buddyicons/${data.owner}.jpg`}
-          alt="profile"
+          alt="profile"          
           onError={(e) =>
             e.target.setAttribute(
               "src",
