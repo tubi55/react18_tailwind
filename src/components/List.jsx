@@ -1,14 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchFlickr } from "../api/api";
 import Card from "./Card";
+import { useGlobalData } from "../hooks/useGlobalData";
+import { useFlickrQuery } from "../hooks/useFlicktQuery";
 
 const List = () => {
-  const { data, isPending, isError, error } = useQuery({
-    queryKey: ["flickr"],
-    queryFn: fetchFlickr,
-    staleTime: 1000 * 60 * 60,
-    gcTime: 1000 * 60 * 60,
-  });
+  const { FlickrType } = useGlobalData();
+  const { data, isPending, isError, error } = useFlickrQuery(FlickrType);
 
   return (
     <section className="flex flex-wrap justify-start w-full gap-5">

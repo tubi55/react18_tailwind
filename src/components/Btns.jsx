@@ -1,22 +1,25 @@
 import clsx from "clsx";
 import { useGlobalData } from "../hooks/useGlobalData";
+import { useRef } from "react";
 
 const Btns = () => {
+  const myID = useRef("197119297@N02");
   const { FlickrType, setFlickrType } = useGlobalData();
 
   const handleClick = (type) => {
-    setFlickrType(type);
+    if (type === "interest") setFlickrType({ type: "interest" });
+    else setFlickrType({ type: "user", id: myID.current });
   };
 
   return (
     <nav className="flex w-full gap-6 mb-10">
-      {["basic", "interest"].map((type) => (
+      {["user", "interest"].map((type) => (
         <button
           key={type}
           onClick={() => handleClick(type)}
-          className={clsx("btn", FlickrType === type && "on")}
+          className={clsx("btn", FlickrType.type === type && "on")}
         >
-          {type === "basic" ? "My Gallery" : "Interest Gallery"}
+          {type === "user" ? "My Gallery" : "Interest Gallery"}
         </button>
       ))}
     </nav>

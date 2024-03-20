@@ -1,6 +1,6 @@
 const Card = ({ data }) => {
   return (
-    <article className="w-[calc((100%-(20px*4))/5)] mb-16">
+    <article className="w-[calc((100%-(20px*4))/5)] mb-16 transition duration-300">
       {/* thumbnail box */}
       <figure className="w-full h-[16vmax] mb-2 cursor-pointer">
         <img
@@ -11,7 +11,7 @@ const Card = ({ data }) => {
       </figure>
 
       {/* image title */}
-      <h3 className="mb-6 text-md text-slate-800">
+      <h3 className="mb-6 min-h-14 text-md text-slate-800">
         {data.title ? data.title : "Have a good day!"}
       </h3>
 
