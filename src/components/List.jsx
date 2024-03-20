@@ -28,7 +28,9 @@ const List = () => {
       </section>
 
       <Modal>
-      {!isPending && data.length !== 0 && <img className='object-contain w-full h-full' src={ImgURL} alt={ImgURL} />}
+      {!isPending && data.length !== 0 && (<>
+      <img className='absolute object-contain w-full h-full translate-x-8 translate-y-8 saturate-150 blur-xl opacity-60' src={ImgURL} alt={ImgURL} />
+      <img className='absolute object-contain w-full h-full' src={ImgURL} alt={ImgURL} /></>) }
       </Modal>
     </>
   );
