@@ -8,11 +8,11 @@ const Card = ({ data }) => {
   };
 
   return (
-    <article className="w-[calc((100%-(20px*4))/5)] mb-16 transition duration-300">
+    <article className="w-[calc((100%-(20px*3))/4)] mb-16 transition duration-300 saturate-50 opacity-80 hover:saturate-150 hover:opacity-100 hover:-translate-y-2">
       {/* thumbnail box */}
       <figure className="picFrame h-[16vmax] mb-2 ">
         <img
-          src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`}
+          src={`https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_w.jpg`}
           alt={data.title}
         />
       </figure>
