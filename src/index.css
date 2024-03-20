@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input[type="text"] {
+    @apply w-[140px] bg-transparent border-b border-black/50  px-2 py-1 pr-8 outline-none;
+  }
+}
+
 @layer components {
   .picFrame {
     @apply relative w-full h-[30vh] cursor-pointer [&_img]:w-full [&_img]:h-full [&_img]:object-cover;
@@ -11,5 +17,8 @@
   }
   .btn.on {
     @apply text-black/100 after:w-full;
+  }
+  .btnSearch {
+    @apply text-lg bg-transparent border-none cursor-pointer text-black/70;
   }
 }
