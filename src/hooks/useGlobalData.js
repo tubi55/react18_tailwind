@@ -5,7 +5,11 @@ export const GlobalContext = createContext();
 
 //전역객체 생성후 특정 state값들을 내부로 전달해주는 wrapping 컴포넌트 생성
 export function GlobalProvider({ children }) {
-  const [FlickrType, setFlickrType] = useState({ type: "interest" });
+  const [FlickrType, setFlickrType] = useState({
+    type: "user",
+    id: "197119297@N02",
+    isProfile: false,
+  });
 
   return (
     <GlobalContext.Provider value={{ FlickrType, setFlickrType }}>

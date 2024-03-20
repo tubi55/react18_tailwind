@@ -27,4 +27,7 @@
   .btnSearch {
     @apply text-lg bg-transparent border-none cursor-pointer text-black/70;
   }
+  .infoText {
+    @apply text-4xl text-black/70 absolute left-[50%] top-[10vh] -translate-x-[50%] leading-normal text-center;
+  }
 }

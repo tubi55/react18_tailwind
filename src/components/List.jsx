@@ -7,11 +7,15 @@ const List = () => {
   const { data, isPending, isError, error } = useFlickrQuery(FlickrType);
 
   return (
-    <section className="flex flex-wrap justify-start w-full gap-5">
-      {isPending && <p>Loading...</p>}
-      {isError && <p>{error?.message}</p>}
+    <section className="relative flex flex-wrap justify-start w-full gap-5">
+      {isPending && <p className="infoText">Loading Flickr Data...</p>}
+      {isError && <p className="infoText">{error?.message}</p>}
       {!isPending && data?.length === 0 && (
-        <p>해당 키워드에 대한 검색 결과가 없습니다.</p>
+        <p className="infoText">
+          Opps.. There's no result!!
+          <br />
+          Try another keyword!
+        </p>
       )}
       {data?.map((flickrData) => (
         <Card key={flickrData.id} data={flickrData} />
